@@ -136,13 +136,15 @@ class GameState:
         return False
 		
     def _reached_end(self, player):	
-        if self.board.get(Point(1, 1)) == Player.x or \
+        if (self.board.get(Point(1, 1)) == Player.x or \
                 self.board.get(Point(1, 2)) == Player.x or \
-                self.board.get(Point(1, 3)) == Player.x:
+                self.board.get(Point(1, 3)) == Player.x) and \
+                player == Player.x:
             return True
-        if self.board.get(Point(3, 1)) == Player.o or \
+        if (self.board.get(Point(3, 1)) == Player.o or \
                 self.board.get(Point(3, 2)) == Player.o or \
-                self.board.get(Point(3, 3)) == Player.o:
+                self.board.get(Point(3, 3)) == Player.o) and \
+				player == Player.o:
             return True
         return False
 
